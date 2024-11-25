@@ -94,7 +94,7 @@ func main(){
 	OriginalURL := "https://github.com/harshal-rembhotkar/"
 	generateShortURL(OriginalURL)
 	http.HandleFunc("/",RootPageURL)
-	http.HandleFunc("shorten/", ShortURLHandler)
+	http.HandleFunc("/shorten", ShortURLHandler)
 	http.HandleFunc("/redirect/",redirectURLHandler)
 	fmt.Println("starting server on port 3000...")
 	err := http.ListenAndServe(":3000", nil)
