@@ -2,20 +2,20 @@ package main
 
 import (
 	"crypto/md5"
-	//"crypto/sha1"
+	"crypto/sha1"
 	"encoding/hex"
 	"encoding/json"
 	"errors"
 	"fmt"
 	"net/http"
-	//"time"
+	
 )
 
 type URL struct{
 	ID string `json:"id"`
 	OriginalURL string `json:"original_url"`
 	ShortURL string `json:"short_url"`
-	//CreationDate string `json:"creation_date"`
+	
 }
 
 var urlDB = make(map[string]URL)
@@ -39,7 +39,7 @@ func createURL(originalURL string) string{
 		ID: id,
 		OriginalURL: originalURL,
 		ShortURL: shortURL,
-	//	CreationDate: time.Now(),
+	
 	}
 
 	return shortURL
